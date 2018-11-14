@@ -7,14 +7,14 @@ public class Player : MonoBehaviour
 {
 
     
-    [SerializeField] Vector2 jumpForce = new Vector2(0, 300);
+    [SerializeField] Vector2 jumpForce = new Vector2(0, 300);  
 
     Rigidbody2D Rigidbody;
 	// Use this for initialization
 	void Start ()
     {
         Rigidbody = GetComponent<Rigidbody2D>();
-	}
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -32,7 +32,6 @@ public class Player : MonoBehaviour
            Die();
 
         }
-
     }
     
     void OnCollisionEnter2D(Collision2D other)

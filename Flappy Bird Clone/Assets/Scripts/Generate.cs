@@ -4,28 +4,29 @@ using UnityEngine;
 
 public class Generate : MonoBehaviour {
 
-    // Use this for initialization
 
     [SerializeField] GameObject rocks;
-    int score = -3;
+    [SerializeField] GameObject enemy;
 
 	void Start () {
 
-        InvokeRepeating("CreateObsticles", 1f, 1.5f);
-	}
+        InvokeRepeating("SpawnRocks", 1f, 1.5f);
+        InvokeRepeating("SpawnEnemy", 1f, 2.5f);
+    }
 	
-    void CreateObsticles() {
+    void SpawnRocks() {
          
-        Instantiate(rocks);
-        score++;
-
-        
+        Instantiate(rocks);        
     }
 
+    void SpawnEnemy()
+    {
+        Instantiate(enemy);
+    }
     private void OnGUI()
     {
         GUI.color = Color.black;
-        GUILayout.Label(" Score: " + score.ToString());
+        
     }
  
 
